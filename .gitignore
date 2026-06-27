@@ -21,6 +21,3 @@ model/fraud_model.pkl
 
 !BigQuery_Files/*.csv
 !Dashboard/*.png
-
-README.md
-requirements.txt
