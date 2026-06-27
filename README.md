@@ -1,213 +1,265 @@
-# Visa Transaction Intelligence
+# CardSense Analytics Platform
 
-## Project Overview
+An end-to-end financial analytics platform that combines BigQuery, SQL, Python, Machine Learning, and Tableau to generate customer intelligence, merchant insights, fraud detection, and cross-sell recommendations from large-scale transaction data.
 
-Visa Transaction Intelligence is an end-to-end analytics project designed to simulate how financial institutions monitor customer behavior, identify fraud risks, discover cross-selling opportunities, and generate executive-level business insights.
+The project demonstrates a complete analytics pipeline starting from raw data ingestion to interactive dashboards and predictive analytics.
 
-The project integrates Python, Machine Learning, SQL, BigQuery, and Tableau to build a modern banking analytics pipeline.
+Repository Structure
 
-## Objectives
+```
+CardSense-Analytics-Platform
+│
+├── BigQuery_Files
+│   ├── Cross Sell Candidates.csv
+│   ├── Customer Segments.csv
+│   ├── Engagement Summary.csv
+│   ├── Executive KPIs.csv
+│   ├── Fraud Predictions.csv
+│   ├── Fraud Summary.csv
+│   └── Merchant Summary.csv
+│
+├── Dashboard
+│   ├── CardSense Analytics Dashboard.png
+│   ├── Customer_segments_preview.png
+│   ├── Customer_engagement_preview.png
+│   ├── High_value_customer_preview.png
+│   ├── Merchant_category_preview.png
+│   └── Merchant_insights_preview.png
+│
+├── notebooks
+│
+├── sql
+│
+├── model
+│   ├── train_model.py
+│   ├── predict.py
+│   └── inspect_predictions.py
+│
+├── README.md
+└── requirements.txt
+```
 
-The primary objectives of this project are:
+Project Architecture
 
-* Analyze customer spending behavior.
-* Segment customers based on engagement and spending patterns.
-* Detect potentially fraudulent transactions.
-* Identify high-value customers for targeted marketing campaigns.
-* Evaluate merchant performance.
-* Create executive dashboards for business decision-making.
+Raw Datasets
 
-## Dataset
+↓
 
-The project utilizes transaction-level banking datasets containing information such as:
+Google BigQuery
 
-Customer transactions
+↓
 
-Transaction amount
+SQL Feature Engineering
 
-Merchant category
+↓
 
-Credit utilization
+Python Data Processing
 
-Customer engagement metrics
+↓
 
-Marketing campaign response
+Machine Learning Fraud Detection
 
-Fraud labels
+↓
 
-## Methodology
+Business Aggregations
 
-### Phase 1: Data Cleaning
+↓
 
-Raw datasets were cleaned and standardized using Python.
+Tableau Dashboard
 
-Data preprocessing included:
+↓
 
-Handling missing values
+Business Insights
 
-Removing duplicates
+Technology Stack
 
-Feature normalization
+Python
 
-Formatting categorical variables
+Pandas
 
-Generating analytical features
+NumPy
 
-Notebook Used:
+Scikit-learn
 
-02_data_cleaning.ipynb
+Google BigQuery
 
----
+SQL
 
-### Phase 2: Customer Intelligence
+Tableau
 
-Customer-level metrics were aggregated to understand spending behavior.
+Jupyter Notebook
 
-Metrics generated:
+Git
 
-Average spend
+GitHub
 
-Credit utilization
+Business Problems Solved
 
-Engagement score
+Customer segmentation using spending behavior
 
-Customer count
+Customer engagement analysis
 
-Churn indicators
+Merchant category performance analysis
 
-Notebook Used:
+Cross-sell opportunity identification
 
-03_customer360.ipynb
+High-value customer discovery
 
----
+Credit utilization analysis
 
-### Phase 3: Retail Feature Engineering
+Fraud prediction using machine learning
 
-Additional business-oriented features were generated.
+Executive KPI reporting
 
-Examples:
+Project Workflow
 
-Merchant level summaries
+Data Collection
 
-Cross-sell eligibility
+Transaction, customer, merchant, marketing, and fraud datasets were collected from multiple structured sources.
 
-Campaign acceptance indicators
+Data Cleaning
+
+Handled missing values
+
+Removed duplicates
+
+Standardized categorical variables
+
+Created analytical features
+
+Validated data quality
+
+Feature Engineering
+
+Created customer engagement score
+
+Calculated utilization ratio
+
+Generated customer segments
+
+Prepared merchant-level aggregations
+
+Computed executive KPIs
+
+Fraud probability scoring
+
+BigQuery SQL Analytics
+
+SQL was used extensively to create analytical datasets.
+
+Customer Segmentation
+
+Merchant Analytics
+
+Fraud Summary
+
+Cross Sell Candidates
 
 Executive KPIs
 
-Notebook Used:
+Customer Engagement Summary
 
-04_retail_features.ipynb
+Machine Learning
 
----
+A supervised machine learning model was trained to identify potentially fraudulent transactions.
 
-### Phase 4: Fraud Detection Model
+Model Pipeline
 
-A supervised machine learning model was trained for fraud detection.
+Data preprocessing
 
-Steps included:
+Feature scaling
 
-Dataset splitting
-
-Feature selection
+Train-test split
 
 Model training
 
-Performance evaluation
+Prediction generation
 
-Probability estimation
+Fraud probability scoring
 
-Model File:
+Exporting prediction datasets
 
-fraud_model.pkl
+Tableau Dashboard
 
-Training Script:
+The dashboard provides interactive business intelligence across multiple business domains.
 
-train_model.py
+Dashboard Sections
 
-Performance Metrics:
+Executive KPIs
 
-Accuracy
+Customer Insights
 
-Precision
+Merchant Insights
 
-Recall
+Customer Engagement Analysis
 
-F1 Score
+Cross Sell Opportunities
 
-Predictions Generated:
+Fraud Detection
 
-Prediction
+Dashboard Features
 
-Fraud Probability
+Interactive filters
 
-Prediction Script:
+Customer drill-down
 
-predict.py
+Merchant category comparison
 
-Generated File:
+Bubble charts
 
-fraud_predictions.csv
+Treemaps
 
----
+Scatter plots
 
-### Phase 5: BigQuery Analytics
+Bar charts
 
-Analytical marts were created inside Google BigQuery.
+KPI cards
 
-SQL queries were written to generate summarized datasets.
+Dashboard Preview
 
-Generated Analytics Tables:
+![Dashboard](Dashboard/CardSense%20Analytics%20Dashboard.png)
 
-customer_segments
+Analytics Performed
 
-executive_kpis
+Customer Analytics
 
-merchant_summary
+Customer segmentation
 
-engagement_summary
+Average spend analysis
 
-fraud_summary
+Customer portfolio distribution
 
-cross_sell_candidates
+Engagement score analysis
 
-fraud_predictions
+Credit utilization analysis
 
-These tables serve as reusable analytical assets for reporting.
+Merchant Analytics
 
----
+Merchant category performance
 
-### Phase 6: Data Export
+Transaction volume analysis
 
-BigQuery tables were exported as CSV files.
+Packed bubble visualization
 
-Exported Files:
+Revenue contribution analysis
 
-Customer Segments.csv
+Fraud Analytics
 
-Executive KPIs.csv
+Fraud probability prediction
 
-Merchant Summary.csv
+High-risk transaction identification
 
-Fraud Summary.csv
+Fraud summary generation
 
-Engagement Summary.csv
+Cross Sell Analytics
 
-Cross Sell Candidates.csv
+Eligible customer identification
 
-Fraud Predictions.csv
+Opportunity ranking
 
----
+High-value customer discovery
 
-### Phase 7: Tableau Visualization
-
-The exported analytical datasets were connected to Tableau Public.
-
-Several dashboards and worksheets were developed.
-
-Executive Dashboard
-
-KPIs displayed:
+Executive KPIs
 
 Total Customers
 
@@ -219,116 +271,86 @@ Average Utilization
 
 Churned Customers
 
-Engagement Score
+Customer Engagement
 
-Customer Intelligence Dashboard
+Business Insights Generated
 
-Visualizations:
+Regular customers represent the largest customer segment.
 
-Customer Segment Distribution
+High-value customers provide the highest revenue opportunities.
 
-Cross Sell Opportunities
+Customer engagement has a positive relationship with spending.
 
-Merchant Analysis
+Several merchant categories outperform others in transaction volume.
 
-Campaign Acceptance Metrics
+Machine learning successfully identifies high-risk transactions.
 
-Fraud Dashboard
+Cross-sell recommendations enable targeted marketing campaigns.
 
-Visualizations:
+Files Generated Using SQL
 
-Fraud Percentage
+Customer Segments.csv
 
-Fraud Distribution
+Engagement Summary.csv
 
-Fraud Probability Analysis
+Merchant Summary.csv
 
-Fraud Summary
+Cross Sell Candidates.csv
 
----
+Executive KPIs.csv
 
-## Technologies Used
+Fraud Summary.csv
 
-Python
+Fraud Predictions.csv
 
-Pandas
+Future Improvements
 
-NumPy
+Real-time streaming analytics
 
-Scikit-learn
+Cloud deployment on AWS
 
-Jupyter Notebook
+Apache Airflow pipeline
 
-Google BigQuery
+Docker containerization
+
+Power BI integration
+
+Customer lifetime value prediction
+
+Recommendation engine
+
+Interactive web application
+
+Skills Demonstrated
+
+Data Analytics
 
 SQL
 
-Tableau Public
+BigQuery
 
-Joblib
+Machine Learning
 
-## Project Structure
+Python
 
-visa-transaction-intelligence/
+Feature Engineering
 
-data/
+Business Intelligence
 
-images/
+Dashboard Design
 
-notebooks/
+Fraud Analytics
 
-01_generate_support_tables.ipynb
+Customer Analytics
 
-02_data_cleaning.ipynb
+Data Visualization
 
-03_customer360.ipynb
+Git Version Control
 
-04_retail_features.ipynb
+Author
 
-05_split_fraud.ipynb
+Krrish Gagneja
 
-ml/
+GitHub
 
-fraud_model.pkl
-
-train_model.py
-
-predict.py
-
-sql/
-
-tableau/
-
-requirements.txt
-
-README.md
-
-## Key Insights
-
-Customer segmentation enables personalized marketing.
-
-Merchant analysis highlights spending concentration.
-
-Fraud probability scoring helps prioritize investigations.
-
-Cross-sell candidates improve campaign efficiency.
-
-Executive KPIs provide a high-level view of business health.
-
-## Future Enhancements
-
-Real-time fraud monitoring
-
-Cloud deployment
-
-Interactive web dashboards
-
-Model retraining pipeline
-
-Automated ETL workflows
-
-Streaming transaction analytics 
-
-## Conclusion
-
-This project demonstrates a complete financial analytics workflow from raw transaction data to machine learning predictions, cloud-based analytical marts, and executive-level business dashboards. It showcases practical applications of data engineering, fraud detection, customer intelligence, and business visualization techniques commonly used in modern banking and payment ecosystems.
+https://github.com/Kush1520/CardSense-Analytics-Platform
