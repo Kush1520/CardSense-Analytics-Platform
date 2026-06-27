@@ -291,10 +291,6 @@ Cross Sell Insights
 
 ---
 
-# Author
-
-**Krrish Gagneja**
-
 GitHub
 
 https://github.com/Kush1520/CardSense-Analytics-Platform
