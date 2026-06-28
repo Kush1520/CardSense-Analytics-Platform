@@ -13,7 +13,7 @@ result = pd.DataFrame({
     'actual_class': df['class'],
     'prediction': pred,
     'fraud_probability': proba[:,1]
-})
+}) 
 
 result.to_csv("fraud_dashboard.csv", index=False)
 
